@@ -12,9 +12,24 @@ const app = express();
 
 app.use(express.json());
 app.use(cookieParser());
+
 app.use(
   cors({
-    origin: process.env.CLIENT_URL,
+    origin: (origin, callback) => {
+      if (!origin) return callback(null, true);
+      
+      const clientUrl = process.env.CLIENT_URL ? process.env.CLIENT_URL.replace(/\/$/, "") : "";
+      const currentOrigin = origin.replace(/\/$/, "");
+
+      if (
+        currentOrigin === clientUrl ||
+        currentOrigin.includes("localhost") ||
+        currentOrigin.endsWith(".vercel.app")
+      ) {
+        return callback(null, true);
+      }
+      return callback(new Error("CORS Not Allowed: " + origin));
+    },
     credentials: true,
   })
 );
