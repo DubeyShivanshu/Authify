@@ -3,10 +3,10 @@ import User from "../models/User.js";
 import { generateAccessToken, generateRefreshToken } from "../utils/generateTokens.js";
 
 const cookieOptions = {
-  httpOnly: true, 
-  secure: process.env.NODE_ENV === "production", 
-  sameSite: process.env.NODE_ENV === "production" ? "none" : "lax", 
-  maxAge: 7 * 24 * 60 * 60 * 1000, 
+  httpOnly: true,
+  secure: true,
+  sameSite: "none",
+  maxAge: 7 * 24 * 60 * 60 * 1000,
 };
 
 export const signup = async (req, res) => {
