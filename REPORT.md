@@ -40,7 +40,7 @@
 - **Current**: Default/generic title tags lacking targeted keywords.
 - **Recommendation**:
   - **Title Tag**: `Shotkut — AI Productivity & Task Automation Platform`
-  - **Meta Description**: `Streamline your workflow with Shotkut. Automate tasks, enhance team collaboration, and boost productivity with AI-driven workflows.`
+  - **Meta Description**: `Streamline your workflow with Shotkut. Automate task, enhance team collaboration, and boost productivity with AI-driven workflows.`
 
 ### B. Heading Hierarchy (`<h1>` to `<h6>`)
 - **Issue**: Page contains multiple `<h1>` tags on a single page, diluting search engine indexing relevance.
